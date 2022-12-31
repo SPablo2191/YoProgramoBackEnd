@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class Controller {
+    //home
+    @GetMapping ("/home")
+    
+    public String home(){
+        return "Bievenido a mi portfolio API";
+    }
     // Auth
     @PostMapping ("/auth")
+    @ResponseBody // retornar como json nuestras instancias
      public void authUser(@RequestBody User user){
          
      }
