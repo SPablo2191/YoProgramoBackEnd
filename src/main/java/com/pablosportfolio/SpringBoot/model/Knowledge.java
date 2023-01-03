@@ -4,10 +4,16 @@
  */
 package com.pablosportfolio.SpringBoot.model;
 
+import lombok.Data;
+
 /**
  *
  * @author pablo
  */
+@Data
 public class Knowledge {
-    
+    private int idKnowledge;
+    private int value;
+    private String name;
+    private String color;
 }

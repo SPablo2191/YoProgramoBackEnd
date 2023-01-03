@@ -13,12 +13,12 @@ import lombok.Setter;
  */
 @Getter @Setter
 public class User {
-    private int id;
+    private int idUser;
     private String userName;
     private String password;
 
-    public User(int id, String userName, String password) {
-        this.id = id;
+    public User(int idUser, String userName, String password) {
+        this.idUser = idUser;
         this.userName = userName;
         this.password = password;
     }

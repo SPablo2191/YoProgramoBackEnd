@@ -4,10 +4,18 @@
  */
 package com.pablosportfolio.SpringBoot.model;
 
+import java.util.Date;
+import lombok.Data;
+
 /**
  *
  * @author pablo
  */
+@Data
 public class Study {
-    
+    private int idStudy;
+    private String title;
+    private String description;
+    private Date startDate;
+    private Date endDate;
 }
