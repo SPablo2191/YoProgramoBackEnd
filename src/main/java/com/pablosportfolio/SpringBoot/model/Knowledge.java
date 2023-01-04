@@ -3,7 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.pablosportfolio.SpringBoot.model;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
 
 /**
@@ -11,7 +14,10 @@ import lombok.Data;
  * @author pablo
  */
 @Data
+@Entity
 public class Knowledge {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idKnowledge;
     private int value;
     private String name;
