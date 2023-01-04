@@ -4,7 +4,10 @@
  */
 package com.pablosportfolio.SpringBoot.Controller;
 
+import com.pablosportfolio.SpringBoot.model.Knowledge;
 import com.pablosportfolio.SpringBoot.model.User;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class Controller {
+    private List<Knowledge> knows = new ArrayList<Knowledge>();
+    
     //home
     @GetMapping ("/home")
     
@@ -32,8 +37,13 @@ public class Controller {
      }
     // Knowledge
     @GetMapping ("/knowledge")
-     public void getKnowledge(){
-         
+    @ResponseBody
+     public List<Knowledge> getKnowledge(){
+         return this.knows;
+     }
+     @PostMapping ("/knowledge")
+     public void addKnowledge(@RequestBody Knowledge knowledge){
+         this.knows.add(knowledge);
      }
     // Project
     @GetMapping ("/project")

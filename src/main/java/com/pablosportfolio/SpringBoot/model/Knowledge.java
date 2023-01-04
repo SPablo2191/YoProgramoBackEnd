@@ -16,4 +16,12 @@ public class Knowledge {
     private int value;
     private String name;
     private String color;
+
+    public Knowledge(int idKnowledge, int value, String name, String color) {
+        this.idKnowledge = idKnowledge;
+        this.value = value;
+        this.name = name;
+        this.color = color;
+    }
+    
 }

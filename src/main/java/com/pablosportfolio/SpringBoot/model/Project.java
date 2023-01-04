@@ -18,6 +18,14 @@ public class Project {
     private String description;
     private String source;
     private Date releaseDate;
+
+    public Project(int idProject, String title, String description, String source, Date releaseDate) {
+        this.idProject = idProject;
+        this.title = title;
+        this.description = description;
+        this.source = source;
+        this.releaseDate = releaseDate;
+    }
     
     
 }
