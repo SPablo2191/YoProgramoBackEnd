@@ -26,6 +26,9 @@ public class Study {
     private Date startDate;
     private Date endDate;
 
+    public Study() {
+    }
+
     public Study(int idStudy, String title, String description, Date startDate, Date endDate) {
         this.idStudy = idStudy;
         this.title = title;

@@ -26,6 +26,9 @@ public class Work {
     private Date startDate;
     private Date endDate;
 
+    public Work() {
+    }
+
     public Work(int idWork, String businessName, String role, Date startDate, Date endDate) {
         this.idWork = idWork;
         this.businessName = businessName;

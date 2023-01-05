@@ -26,6 +26,9 @@ public class Project {
     private String source;
     private Date releaseDate;
 
+    public Project() {
+    }
+
     public Project(int idProject, String title, String description, String source, Date releaseDate) {
         this.idProject = idProject;
         this.title = title;
