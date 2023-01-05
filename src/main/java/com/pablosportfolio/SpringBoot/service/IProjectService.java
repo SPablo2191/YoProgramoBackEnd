@@ -4,10 +4,16 @@
  */
 package com.pablosportfolio.SpringBoot.service;
 
+import com.pablosportfolio.SpringBoot.model.Project;
+import java.util.List;
+
 /**
  *
  * @author pablo
  */
 public interface IProjectService {
-    
+    public List<Project> getProjects();
+    public void addProject(Project project);
+    public void deleteProject(int idProject);
+    public Project getProject(int idProject);
 }

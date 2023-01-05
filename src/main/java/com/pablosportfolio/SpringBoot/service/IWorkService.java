@@ -4,10 +4,16 @@
  */
 package com.pablosportfolio.SpringBoot.service;
 
+import com.pablosportfolio.SpringBoot.model.Work;
+import java.util.List;
+
 /**
  *
  * @author pablo
  */
 public interface IWorkService {
-    
+    public List<Work> getWorks();
+    public void addWork(Work work);
+    public void deleteWork(int idWork);
+    public Work getWork(int idWork);
 }
