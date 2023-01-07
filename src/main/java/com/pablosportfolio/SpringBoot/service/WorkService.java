@@ -8,11 +8,13 @@ import com.pablosportfolio.SpringBoot.model.Work;
 import com.pablosportfolio.SpringBoot.repository.WorkRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author pablo
  */
+@Service
 public class WorkService implements IWorkService {
     @Autowired
     public WorkRepository workRepo;

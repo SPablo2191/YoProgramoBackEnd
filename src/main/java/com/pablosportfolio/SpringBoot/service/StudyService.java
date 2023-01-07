@@ -8,11 +8,13 @@ import com.pablosportfolio.SpringBoot.model.Study;
 import com.pablosportfolio.SpringBoot.repository.StudyRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author pablo
  */
+@Service
 public class StudyService implements IStudyService {
     @Autowired
     public StudyRepository studyRepo; 

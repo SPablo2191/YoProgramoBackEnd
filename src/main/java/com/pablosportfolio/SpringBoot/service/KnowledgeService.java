@@ -8,11 +8,13 @@ import com.pablosportfolio.SpringBoot.model.Knowledge;
 import com.pablosportfolio.SpringBoot.repository.KnowledgeRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author pablo
  */
+@Service
 public class KnowledgeService implements IKnowledgeService {
     @Autowired
     public KnowledgeRepository knowledgeRepo;

@@ -8,11 +8,13 @@ import com.pablosportfolio.SpringBoot.model.Project;
 import com.pablosportfolio.SpringBoot.repository.ProjectRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *
  * @author pablo
  */
+@Service
 public class ProjectService implements IProjectService {
     @Autowired
     public ProjectRepository projectRepo; 
