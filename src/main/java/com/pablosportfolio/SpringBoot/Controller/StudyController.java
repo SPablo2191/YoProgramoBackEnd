@@ -8,6 +8,7 @@ import com.pablosportfolio.SpringBoot.model.Study;
 import com.pablosportfolio.SpringBoot.service.IStudyService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,12 +24,13 @@ public class StudyController {
     @Autowired
     private IStudyService studyServ;
     // Study
+    @CrossOrigin("*")
     @GetMapping ("/study")
     @ResponseBody
      public List<Study> getStudy(){
          return this.studyServ.getStudies();
      }
-     
+    @CrossOrigin("*")
     @PostMapping ("/study")
      public void addStudy(@RequestBody Study study){
          this.studyServ.addStudy(study);

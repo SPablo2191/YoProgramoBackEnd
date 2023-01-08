@@ -8,6 +8,7 @@ import com.pablosportfolio.SpringBoot.model.Work;
 import com.pablosportfolio.SpringBoot.service.IWorkService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,11 +23,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class WorkController {
     @Autowired
     private IWorkService workServ;
+    
+    @CrossOrigin("*")
     @GetMapping ("/work")
     @ResponseBody
      public List<Work> getWork(){
          return this.workServ.getWorks();
     } 
+    @CrossOrigin("*")
     @PostMapping ("/work")
     public void addWork(@RequestBody Work work){
         this.workServ.addWork(work);

@@ -8,6 +8,7 @@ import com.pablosportfolio.SpringBoot.model.User;
 import com.pablosportfolio.SpringBoot.service.IUserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,12 +23,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     private IUserService userServ;
-
+     @CrossOrigin("*")
      @GetMapping ("/user")
      @ResponseBody
      public List<User> getUsers(){
          return this.userServ.getUsers();
      }
+     @CrossOrigin("*")
      @PostMapping ("/user")
      public void addKnowledge(@RequestBody User user){
          this.userServ.addUser(user);

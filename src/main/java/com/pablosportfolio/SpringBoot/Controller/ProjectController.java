@@ -8,6 +8,7 @@ import com.pablosportfolio.SpringBoot.model.Project;
 import com.pablosportfolio.SpringBoot.service.IProjectService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,12 +24,13 @@ public class ProjectController {
     @Autowired
     private IProjectService projectServ;
     // Project
+    @CrossOrigin("*")
     @GetMapping ("/project")
     @ResponseBody
      public List<Project> getProject(){
          return this.projectServ.getProjects();
      }    
-
+    @CrossOrigin("*")
     @PostMapping ("/project")
      public void addProject(@RequestBody Project project){
          this.projectServ.addProject(project);
