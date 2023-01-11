@@ -13,6 +13,7 @@ import java.util.List;
  */
 public interface IUserService {
     public List<User> getUsers();
+    public List<User> authUser(User user);
     public void addUser(User user);
     public void deleteUser(int idUser);
     public User getUser(int idUser);

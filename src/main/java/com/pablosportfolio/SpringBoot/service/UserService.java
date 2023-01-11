@@ -24,8 +24,9 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public void addUser(User user) {
-        userRepo.save(user);
+    public List<User> authUser(User user) {
+        List<User> listUser  = this.userRepo.findByuserNameAndPasswordContaining(user.getUserName(), user.getPassword());
+        return listUser;
     }
 
     @Override
@@ -36,6 +37,11 @@ public class UserService implements IUserService {
     @Override
     public User getUser(int idUser) {
         return this.userRepo.findById(idUser).orElse(null);
+    }
+
+    @Override
+    public void addUser(User user) {
+        this.userRepo.save(user);
     }
     
 }
