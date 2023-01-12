@@ -25,16 +25,18 @@ public class Work {
     private String role;
     private Date startDate;
     private Date endDate;
+    private String source;
 
     public Work() {
     }
 
-    public Work(int idWork, String businessName, String role, Date startDate, Date endDate) {
+    public Work(int idWork, String businessName, String role, Date startDate, Date endDate,String source) {
         this.idWork = idWork;
         this.businessName = businessName;
         this.role = role;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.source = source;
     }
-    
+
 }

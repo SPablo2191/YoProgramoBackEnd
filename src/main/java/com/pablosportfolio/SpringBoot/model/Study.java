@@ -25,16 +25,18 @@ public class Study {
     private String description;
     private Date startDate;
     private Date endDate;
+    private String source;
 
     public Study() {
     }
 
-    public Study(int idStudy, String title, String description, Date startDate, Date endDate) {
+    public Study(int idStudy, String title, String description, Date startDate, Date endDate, String source) {
         this.idStudy = idStudy;
         this.title = title;
         this.description = description;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.source = source;
     }
-    
+
 }

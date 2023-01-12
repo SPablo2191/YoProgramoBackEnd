@@ -36,9 +36,9 @@ public class UserController {
          List<User> usersFound = this.userServ.authUser(user);
          System.out.println(usersFound);
          if(usersFound.isEmpty()){
-             return new Session(new User(),"hola");
+             return new Session(new User(),"ACCESS_DENIED");
          }
-         Session userSession = new Session(usersFound.get(0),"");
+         Session userSession = new Session(usersFound.get(0),"MiPortfolio");
          return userSession;
      }
 }
