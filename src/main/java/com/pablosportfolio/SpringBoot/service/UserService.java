@@ -6,6 +6,8 @@ package com.pablosportfolio.SpringBoot.service;
 
 import com.pablosportfolio.SpringBoot.model.User;
 import com.pablosportfolio.SpringBoot.repository.UserRepository;
+
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +27,10 @@ public class UserService implements IUserService {
 
     @Override
     public List<User> authUser(User user) {
-        List<User> listUser  = this.userRepo.findByuserNameAndPasswordContaining(user.getUserName(), user.getPassword());
+        List<User> listUser  = this.userRepo.findByuserName(user.getUserName());
+        if(user.getPassword().equals(listUser.get(0).getPassword())){
+            return new ArrayList<User>();
+        }
         return listUser;
     }
 
