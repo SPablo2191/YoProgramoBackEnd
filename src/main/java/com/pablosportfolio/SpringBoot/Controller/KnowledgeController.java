@@ -8,7 +8,6 @@ import com.pablosportfolio.SpringBoot.model.Knowledge;
 import com.pablosportfolio.SpringBoot.service.IKnowledgeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,9 +39,9 @@ public class KnowledgeController {
 //     }
      @CrossOrigin("*")
      @PostMapping ("/knowledge")
-     public HttpStatus addKnowledge(@RequestBody Knowledge knowledge){
+     public List<Knowledge> addKnowledge(@RequestBody Knowledge knowledge){
          this.knowledgeServ.addKnowledge(knowledge);
-         return HttpStatus.OK;
+         return this.getKnowledges();
      }
     @CrossOrigin("*")
     @DeleteMapping  ("/knowledge/{id}") 

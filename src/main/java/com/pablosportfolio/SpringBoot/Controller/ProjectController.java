@@ -34,8 +34,9 @@ public class ProjectController {
      }    
     @CrossOrigin("*")
     @PostMapping ("/project")
-     public void addProject(@RequestBody Project project){
+     public List<Project> addProject(@RequestBody Project project){
          this.projectServ.addProject(project);
+         return this.getProject();
      }
     @CrossOrigin("*")
     @DeleteMapping  ("/project/{id}") 

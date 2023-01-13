@@ -34,8 +34,9 @@ public class WorkController {
     } 
     @CrossOrigin("*")
     @PostMapping ("/work")
-    public void addWork(@RequestBody Work work){
+    public List<Work> addWork(@RequestBody Work work){
         this.workServ.addWork(work);
+        return this.getWork();
     }
     @CrossOrigin("*")
     @DeleteMapping  ("/work/{id}") 

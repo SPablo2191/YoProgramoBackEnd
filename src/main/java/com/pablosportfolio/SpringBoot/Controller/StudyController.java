@@ -34,8 +34,9 @@ public class StudyController {
      }
     @CrossOrigin("*")
     @PostMapping ("/study")
-     public void addStudy(@RequestBody Study study){
+     public List<Study> addStudy(@RequestBody Study study){
          this.studyServ.addStudy(study);
+         return this.getStudy();
      }
     @CrossOrigin("*")
     @DeleteMapping  ("/study/{id}") 
