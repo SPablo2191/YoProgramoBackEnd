@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     private IUserService userServ;
-//     @CrossOrigin("*")
-//     @GetMapping ("/user")
-//     @ResponseBody
-//     public List<User> getUsers(){
-//         return this.userServ.getUsers();
-//     }
+    @CrossOrigin("*")
+    @PostMapping ("/add/user")
+    @ResponseBody
+    public void addUser(@RequestBody User user){
+        this.userServ.addUser(user);
+    }
      @CrossOrigin("*")
      @ResponseBody
      @PostMapping ("/user")
